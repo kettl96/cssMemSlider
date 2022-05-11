@@ -204,3 +204,22 @@ input {
 	border: solid 0.1rem #fff;
 }
 
+@media screen and (max-width: 38.35rem) {
+	.control {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.text {
+		flex-basis: 100%;
+		font-size: 0.9rem;
+	}
+
+	.buttons {
+		flex-basis: 100%;
+		align-self: center;
+		margin-bottom: 0.1rem;
+		display: flex;
+		justify-content: center;
+	}
+}
