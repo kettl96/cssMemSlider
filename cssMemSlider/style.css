@@ -1,0 +1,225 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0rem;
+}
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,
+:active {
+	outline: none;
+}
+a:focus,
+a:active {
+	outline: none;
+}
+html,
+input,
+button,
+textarea {
+	font-family: inherit;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+a,
+a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style-type: none;
+}
+img {
+	vertical-align: top;
+}
+
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+html {
+	background: #25282a;
+	font-family: "Helvetica", "Arial", sans-serif;
+	font-size: 20px;
+	color: #fff;
+}
+
+.wrapper {
+	width: 90%;
+	max-width: 50rem;
+	margin: 1.5rem auto;
+	overflow: hidden;
+	position: relative;
+}
+
+input {
+	display: none;
+}
+
+.slider {
+	display: flex;
+	width: calc(500% + 4rem);
+	gap: 1rem;
+	transition: 0.5s;
+	margin-bottom: 1rem;
+}
+
+.slide {
+	width: calc((100% - 4rem) / 5);
+	scroll-snap-align: start;
+}
+
+.slide img {
+	width: 100%;
+	height: auto;
+}
+
+.control {
+	display: flex;
+	justify-content: space-between;
+	gap: 2%;
+}
+
+.discabe {
+	margin-top: 0.5rem;
+}
+
+.text {
+	height: 0rem;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(1rem);
+	
+}
+
+.buttons {
+	display: flex;
+	background-color: #25282a;
+}
+
+.button {
+	width: 1.2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button > span {
+	display: block;
+	width: 0.8rem;
+	height: 0.8rem;
+	border: solid 0.1rem #71abfe;
+	background-color: #71abfe;
+	border-radius: 50%;
+	transition: 0.2s;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.button:hover > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+.button:active > span {
+	border: solid 0.1rem #fff;
+	background-color: #fff;
+}
+
+#slide1:checked ~ .slider {
+	transform: translateX(0);
+}
+
+#slide2:checked ~ .slider {
+	transform: translateX(calc(-20% * 1 - 1rem / 4));
+}
+
+#slide3:checked ~ .slider {
+	transform: translateX(calc(-20% * 2 - 2rem / 4));
+}
+
+#slide4:checked ~ .slider {
+	transform: translateX(calc(-20% * 3 - 3rem / 4));
+}
+
+#slide5:checked ~ .slider {
+	transform: translateX(calc(-20% * 4 - 4rem / 4));
+}
+
+#slide1:checked ~ .control > .discabe > #d1,
+#slide2:checked ~ .control > .discabe > #d2,
+#slide3:checked ~ .control > .discabe > #d3,
+#slide4:checked ~ .control > .discabe > #d4,
+#slide5:checked ~ .control > .discabe > #d5 {
+	visibility: visible;
+	height: auto;
+	opacity: 1;
+	transform: translateX(0);
+	transition: 0.5s;
+}
+
+#slide1:checked ~ .control > .buttons > #select1 > span,
+#slide2:checked ~ .control > .buttons > #select2 > span,
+#slide3:checked ~ .control > .buttons > #select3 > span,
+#slide4:checked ~ .control > .buttons > #select4 > span,
+#slide5:checked ~ .control > .buttons > #select5 > span {
+	border: solid 0.1rem #71abfe;
+	background-color: transparent;
+}
+
+#slide1:checked ~ .control > .buttons > #select1:hover > span,
+#slide2:checked ~ .control > .buttons > #select2:hover > span,
+#slide3:checked ~ .control > .buttons > #select3:hover > span,
+#slide4:checked ~ .control > .buttons > #select4:hover > span,
+#slide5:checked ~ .control > .buttons > #select5:hover > span {
+	border: solid 0.1rem #fff;
+}
+
+#slide1:checked ~ .control > .buttons > #select1:active > span,
+#slide2:checked ~ .control > .buttons > #select2:active > span,
+#slide3:checked ~ .control > .buttons > #select3:active > span,
+#slide4:checked ~ .control > .buttons > #select4:active > span,
+#slide5:checked ~ .control > .buttons > #select5:active > span {
+	border: solid 0.1rem #fff;
+}
+
+@media screen and (max-width: 38.35rem) {
+	.control {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.text {
+		flex-basis: 100%;
+		font-size: 0.9rem;
+	}
+
+	.buttons {
+		flex-basis: 100%;
+		align-self: center;
+		margin-bottom: 0.1rem;
+		display: flex;
+		justify-content: center;
+	}
+}
